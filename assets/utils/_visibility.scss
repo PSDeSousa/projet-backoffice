@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/colors" as *;
+@use "../abstracts/typography" as *;
+.hidden{
+    display : none;
+}
+.show{
+    display:block;
+    position:fixed;
+    top:0;
+    z-index: 10;
+    width:100%;
+}

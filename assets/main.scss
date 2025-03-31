@@ -16,6 +16,7 @@
 @use "components/buttons/secondary" as *;
 @use "components/buttons/terciary" as *;
 @use "components/cards/card" as *;
+@use "components/accordions/accordion" as *;
 // 5 Import des pages spécifiques
 @use "pages/home" as *;
 @use "pages/contact" as *;

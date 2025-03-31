@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UFT-8">
+        <link href="assets/vendors/bootstrap-fram/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/styles.css" rel="stylesheet">
+        <link href="assets/css/main.css" rel="stylesheet">
+        <title>My market</title>
+    </head>
+    <body>
+        <!------------------ Header --------------------------->
+        <header>
+        </header>
+        <main>
+            <section class="produits">
+                <div class="container-fluid">
+                    <div class="column-nav">
+                        <nav>
+                            <a href="index.html" title="Retour à l'accueil">
+                                <div class="logo">
+                                    <img src="assets/images/logo/my-market.png" alt="My Market">
+                                    <p>M<span>Y</span> MARKET</p>
+                                </div>    
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/compta.png" alt="comptabilité">
+                                        <p>Comptabilité</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="selected-nav">
+                                        <img src="assets/images/icone/produit.png" alt="Produits">
+                                        <p>Produits</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/fourn.png" alt="Fournisseurs">
+                                        <p>Fournisseurs</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/commande.png" alt="Commandes">
+                                        <p>Commandes</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/param.png" alt="Paramètres">
+                                        <p>Paramètres</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="resetStorage">
+                                        <img src="assets/images/icone/reset.png" alt="Effacer modifications catalogue">
+                                        <p>Annuler modif.</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="column">
+                        <div class="container-fluid titre">
+                            <div class="container">
+                                <h1>Liste des produits</h1>
+                            </div>
+                        </div> 
+                        <div class="container">   
+                            <div class="row">
+                                <div class="search-bar">
+                                    <div class="col">
+                                        <form action="">
+                                            <input type="text" placeholder="Rechercher">
+                                        </form>
+                                    </div>
+                                    <div class="col">
+                                        <div id="ajout">
+                                            <a href="#">
+                                                <div class="primary-button">
+                                                    <p>+</p>
+                                                    <p>Ajouter</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <table class="products">
+                                    <thead>
+                                        <tr>
+                                            <th>Référence</th>
+                                            <th>Catégorie</th>
+                                            <th>Libellé</th>
+                                            <th>Prix</th>
+                                            <th>En stock</th>
+                                            <th colspan="3">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="product-row">
+                                    </tbody>
+                                    <tfoot>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page-ajout" class="hidden">
+                <div class="container-fluid">
+                    <div class="column-nav">
+                        <nav>
+                            <a href="index.html" title="Retour à l'accueil">
+                                <div class="logo">
+                                    <img src="assets/images/logo/my-market.png" alt="My Market">
+                                    <p>M<span>Y</span> MARKET</p>
+                                </div>    
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/compta.png" alt="comptabilité">
+                                        <p>Comptabilité</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="selected-nav">
+                                        <img src="assets/images/icone/produit.png" alt="Produits">
+                                        <p>Produits</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/fourn.png" alt="Fournisseurs">
+                                        <p>Fournisseurs</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/commande.png" alt="Commandes">
+                                        <p>Commandes</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/param.png" alt="Paramètres">
+                                        <p>Paramètres</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="column">
+                        <div class="container-fluid titre">
+                            <div class="container line">
+                                <h2>Ajouter un produit</h2>
+                                <a href="#" id="fermer-ajout">
+                                    <div class="primary-button">
+                                        <img src="assets/images/icone/corner-up-left.png" alt="retour">
+                                        <p> Retour</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="container">    
+                            <div class="row">
+                                <form id="form-product" class="form-ajout">
+                                    <div class="col">
+                                        <div class="form-item">
+                                            <label for="product-reference">Référence</label>
+                                            <input type="text" id="product-reference" required>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="product-categorie">Catégorie</label>
+                                            <select id="product-categorie" required class="list-categorie">
+                                            </select>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="product-libelle">Libellé</label>
+                                            <input type="text" id="product-libelle" required>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="product-prix">Prix de vente conseillé</label>
+                                            <input type="text" id="product-prix" required>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="product-photo">Photos</label>
+                                            <input type="text" id="product-photo" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-item">
+                                            <label for="product-description">Description</label>
+                                            <input type="text" id="product-description" required>
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="product-stock">En stock</label>
+                                            <input type="checkbox" id="product-stock">
+                                        </div>
+                                        <div class="form-item">
+                                            <button type="submit" class="primary-button">
+                                                <img src="assets/images/icone/save.png" alt="retour">
+                                                <p>Enregistrer</p>
+                                            </button>
+                                        </div>
+                                    </div>                     
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page-visu" class="hidden">
+                <div class="container-fluid">
+                    <div class="column-nav">
+                        <nav>
+                            <a href="index.html" title="Retour à l'accueil">
+                                <div class="logo">
+                                    <img src="assets/images/logo/my-market.png" alt="My Market">
+                                    <p>M<span>Y</span> MARKET</p>
+                                </div>    
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/compta.png" alt="comptabilité">
+                                        <p>Comptabilité</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="selected-nav">
+                                        <img src="assets/images/icone/produit.png" alt="Produits">
+                                        <p>Produits</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/fourn.png" alt="Fournisseurs">
+                                        <p>Fournisseurs</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/commande.png" alt="Commandes">
+                                        <p>Commandes</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/images/icone/param.png" alt="Paramètres">
+                                        <p>Paramètres</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="column">
+                        <div class="container-fluid titre">
+                            <div class="container line">
+                                <h2>Détail du produit</h2>
+                                <a href="#" id="fermer-visu">
+                                    <div class="primary-button">
+                                        <img src="assets/images/icone/corner-up-left.png" alt="retour">
+                                        <p> Retour</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="container">    
+                            <div class="row card-container">
+                                <div id="visu-photo">
+                                </div>
+                                <div class="card-visu">
+                                    <div class="line">
+                                        <h3 id="visu-libelle">Libellé du produit</h3>
+                                        <div class="stock-line">
+                                            <div id="visu-stock-tag"></div>
+                                            <p id="visu-stock"></span></p>
+                                        </div>
+                                    </div>
+                                    <div class="line">
+                                        <div class="col">
+                                            <div class="line">
+                                                <p class="bold-text">Référence : </p>
+                                                <p id="visu-reference"></p>
+                                            </div>
+                                            <p id="visu-categorie" class="tag-categorie">Catégorie</p>
+                                        </div>
+                                        <p id="visu-prix" class="price">prix</p>
+                                    </div>
+                                    <div class="line">
+                                        <p id="visu-description"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

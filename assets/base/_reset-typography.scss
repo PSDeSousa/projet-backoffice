@@ -1,0 +1,26 @@
+// Typos
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/typography' as *;
+// Titre et paragraphes
+body{
+    @include text($text-color,$secondary-font,1rem);
+}
+h1{
+    @include text($primary-color,$primary-font,1.2rem);
+    text-transform:uppercase;
+}
+h2{
+    @include text($primary-color,$primary-font,1.2rem);
+    text-transform:uppercase;
+}
+h3{
+    @include text($text-color,$primary-font,1.2rem);
+}
+p{
+    @include text($text-color,$secondary-font,1rem);
+}
+.bold-text{
+    @include text($text-color,$primary-font,1rem);
+}

@@ -1,0 +1,16 @@
+/**
+**************** Polices *******************************************************
+**/
+/********** Inter ******************************/
+/** Inter Bold**/
+@font-face {
+  font-family: "Inter Bold";
+  src: url("../fonts/inter/Inter_18pt-Bold.ttf");
+}
+/** Inter Regular**/
+@font-face {
+  font-family: "Inter Regular";
+  src: url("../fonts/inter/Inter_18pt-Regular.ttf");
+}
+
+/*# sourceMappingURL=styles.css.map */

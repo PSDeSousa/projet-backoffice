@@ -1,0 +1,59 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/typography' as *;
+.card-container{
+    width:100%;
+    @include flex(row, space-evenly, start);
+    flex-wrap: wrap;
+    background-color : $back-color;
+}
+#visu-photo img{
+    width : 20rem;
+    height : 20rem;
+    object-fit: cover;
+    margin : auto;
+}
+.card-visu{
+    @include flex(row, space-evenly, start);
+    width:30rem;
+    gap : 3rem;
+    .line{
+        @include flex(row, space-between, start);
+        width : 100%;
+        h3{
+            margin-top:0;
+        }
+        p{
+            margin-top: 0rem;
+        }
+        .stock-line{
+            width : 7rem;
+            @include flex(row, space-between, center);
+            p{
+                margin: 0rem;
+            }
+        }
+        .line{
+            @include flex(row, space-between, center);
+        }
+    }
+    .stock-oui{
+        margin : 0 1rem 0 1rem;
+    }
+    .stock-non{
+        margin : 0 1rem 0 1rem;
+    }
+    .bold-text{
+        margin-right : 1rem;
+    }
+}
+
+.tag-categorie{
+    background-color: $primary-tag-color;
+    width: fit-content;
+    padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+}
+.price{
+    @include text($text-color,$primary-font,2rem);
+}
